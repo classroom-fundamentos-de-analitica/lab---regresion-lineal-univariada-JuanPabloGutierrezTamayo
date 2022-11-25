@@ -28,10 +28,10 @@ def pregunta_01():
     print(X.shape)
 
     # Transforme `y` a un array de numpy usando reshape
-    y_reshaped = y.reshape(y.size,1)
+    y_reshaped = y.values.reshape(y.size,1)
 
     # Trasforme `X` a un array de numpy usando reshape
-    X_reshaped = X.reshape(X.size,1)
+    X_reshaped = X.values.reshape(X.size,1)
 
     # Imprima las nuevas dimensiones de `y`
     print(y_reshaped.shape)
@@ -141,7 +141,7 @@ def pregunta_04():
     linearRegression.fit(X_train, y_train)
 
     # Pronostique y_test usando X_test
-    y_pred = X_test
+    y_pred = linearRegression.predict(X_test)
 
     # Compute and print R^2 and RMSE
     print("R^2: {:6.4f}".format(linearRegression.score(X_test, y_test)))
